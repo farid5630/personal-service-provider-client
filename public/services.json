@@ -1,0 +1,44 @@
+[
+  {
+    "id": "625bdf2d1f8b6969856d33e8",
+    "name": "Corporate Sales Training #1 - Closing a Deal",
+    "description": "The primary objective of sales is to close deals with your prospective clients. A great deal of time and effort is spent in corporate sales training to get your team members ready to make a sale and optimize their sales strategy to make the process easier. Acquiring leads is one thing, but closing a transaction is a whole other challenge.",
+    "price": 2000,
+    "images": "https://i.ibb.co/6cQdn8s/services-1.png"
+  },
+  {
+    "id": "625bdf2d6b8fd67629c64dd3",
+    "name": "Corporate Sales Training #2 - Knowing your Market",
+    "description": "Being aware of your target market is essential before implementing a sales strategy. This course by EdApp will explore how knowing your market will help you and your organization make the right calls and decisions through market research.",
+    "price": 2500,
+    "images": "https://i.ibb.co/0FDpmdn/services-2.png"
+  },
+  {
+    "id": "625bdf2d2e978cbc2feeaba4",
+    "name": "Corporate Sales Training #3 - Selling Strategies and Interacting with Customers",
+    "description": "One of the most effective ways to sell to your customers is by providing a pleasant shopping experience until a transaction is made. The course covers some daily interactions, such as how to greet the customers, sell the products, and respond to questions.",
+    "price": 2600,
+    "images": "https://i.ibb.co/w7GVHNM/services-3.png"
+  },
+  {
+    "id": "625bdf2df3b9b0030752c743",
+    "name": "Corporate Sales Training #4 - Solution Selling Strategy",
+    "description": "There are different ways to sell a product or service. Depending on the industry, there are tried-and-true strategies that work, as well as innovative approaches to reach new clients.",
+    "price": 3600,
+    "images": "https://i.ibb.co/PzyzD5z/services-4.png"
+  },
+  {
+    "id": "625bdf2d3b1ff758a5fafeef",
+    "name": "Corporate Sales Training #5 - The Language of Sales",
+    "description": "EdApp's Language of Sales course helps learners form relationships with consumers, which enables them to communicate well even in the toughest situations. It starts with teaching how to build trust by being aware of the problems that consumers face and leveraging them to build rapport",
+    "price": 3500,
+    "images": "https://i.ibb.co/hfbZ0Jg/services-5.png"
+  },
+  {
+    "id": "625bdf2d09de1199ea9d48e8",
+    "name": "Corporate Sales Training #8 - Upselling",
+    "description": "This Upselling course by EdApp will teach your sales team all about the fundamentals of upselling and the various factors that contribute to creating upselling avenues. It explores the psychology of upselling, which is manifested by providing consumers with the “must-have” effect to entice them to upgrade",
+    "price": 2800,
+    "images": "https://i.ibb.co/x1pFQJ4/services-6.png"
+  }
+]
