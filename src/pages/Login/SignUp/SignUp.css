@@ -1,0 +1,8 @@
+/* .sign-up-images{
+
+} */
+@media only screen and (max-width:562px) {
+    .sign-up-images{
+        display: none;
+    }
+}
