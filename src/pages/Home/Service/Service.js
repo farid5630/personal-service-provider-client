@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 const Service = ({ service }) => {
     const { name, description, cost, certification, images } = service;
     // console.log(service)
+  const desSlice = description.slice(0, 130);
     
     return (
       <Col className="g-4" xs={12} sm={6} md={4}>
@@ -16,7 +17,7 @@ const Service = ({ service }) => {
           <Card.Img  variant="top" src={images} />
           <Card.Body>
             <Card.Title>{name}</Card.Title>
-            <Card.Text>{description}</Card.Text>
+            <Card.Text>{desSlice}...</Card.Text>
             <p>Certification: {certification }</p>
             <p>Cost: ${cost}</p>
           </Card.Body>

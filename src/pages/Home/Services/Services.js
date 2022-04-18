@@ -7,7 +7,7 @@ import './Services.css'
 const Services = () => {
     const [services] = useServices();
     return (
-      <Container>
+      <Container id="/home#services">
         <h1 className="text-center mt-5 mb-3">My Service</h1>
         <Row>
           {services.map((service) => (

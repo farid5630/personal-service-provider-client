@@ -11,9 +11,11 @@ import SignGoogle from "../SignGoogle/SignGoogle";
 
 const SignUp = () => {
   const [createUserWithEmailAndPassword, user] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [updateProfile, updating, error] = useUpdateProfile(auth);
 
+
+  
   const navigate = useNavigate();
   if (user) {
     console.log(user);
@@ -29,7 +31,7 @@ const SignUp = () => {
     const password = e.target.password.value;
     const phone = e.target.phone.value;
 
-    await createUserWithEmailAndPassword(email, password);
+    await createUserWithEmailAndPassword(email, password, );
     await updateProfile({ displayName: name, phoneNumnber: phone });
     console.log("updating");
 
@@ -37,7 +39,7 @@ const SignUp = () => {
   };
 
   return (
-    <Container>
+    <Container className="mb-5">
       <h1 className="text-primary text-center mt-4">Registration Form</h1>
       <Row className="mt-3">
         <Col
