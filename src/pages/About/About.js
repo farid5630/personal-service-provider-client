@@ -2,8 +2,10 @@ import React from 'react';
 
 const About = () => {
     return (
-        <div>
-            <h1>My Name is Md Foridul Islam</h1>
+        <div className='w-50 mx-auto'>
+            <h4>This is Md Faridul islam</h4>
+            
+
         </div>
     );
 };

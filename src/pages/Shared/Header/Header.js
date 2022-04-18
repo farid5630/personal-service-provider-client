@@ -25,7 +25,7 @@ const Header = () => {
         <Container className="fs-6">
           <Navbar.Brand>
             <Link to="/" className="text-light text-decoration-none">
-              <h3>CORPORATE SALES TRANER</h3>
+              <h3>CORPORATE SALES TRAINER</h3>
             </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
