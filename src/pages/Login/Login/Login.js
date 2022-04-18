@@ -6,6 +6,7 @@ import { toast, ToastContainer } from "react-toastify";
 import auth from "../../../firebase.init";
 import SignGoogle from "../SignGoogle/SignGoogle";
 import "react-toastify/dist/ReactToastify.css";
+import Loading from "../../Shared/Loading/Loading";
 
 const Login = () => {
   const emailRef = useRef("");
@@ -18,9 +19,11 @@ const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
   const from = location.state?.from?.pathname || "/";
 
   const navigate = useNavigate();
-
+  if (error) {
+  toast("User Connot Sign in");
+}
   if (loading || sending ) {
-    return <p>Loading........</p>
+    return <Loading></Loading>
   }
 
   const handleSignEmailandPass = async (e) => {
