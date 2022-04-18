@@ -10,7 +10,7 @@ import {
 import SignGoogle from "../SignGoogle/SignGoogle";
 
 const SignUp = () => {
-  const [createUserWithEmailAndPassword, user] =
+  const [createUserWithEmailAndPassword, user, createerror] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [updateProfile, updating, error] = useUpdateProfile(auth);
 

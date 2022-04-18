@@ -20,7 +20,7 @@ const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
   const navigate = useNavigate();
   if (error) {
-  toast("User Connot Sign in");
+  toast("User Sign in Faield...");
 }
   if (loading || sending ) {
     return <Loading></Loading>
