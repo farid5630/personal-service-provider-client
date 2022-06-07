@@ -14,13 +14,9 @@ const SignUp = () => {
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [updateProfile, updating, error] = useUpdateProfile(auth);
 
-
+const navigate = useNavigate();
   
-  const navigate = useNavigate();
-  if (user) {
-    console.log(user);
-  }
-
+  
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
@@ -33,11 +29,17 @@ const SignUp = () => {
 
     await createUserWithEmailAndPassword(email, password, );
     await updateProfile({ displayName: name, phoneNumnber: phone });
-    console.log("updating");
-
-    navigate(from, { replace: true });
+    
   };
 
+
+if (user) {
+  console.log(user);
+}
+
+  if (user) {
+    navigate(from, { replace: true });
+  }
   return (
     <Container className="mb-5">
       <h1 className="text-primary text-center mt-4">Registration Form</h1>
@@ -70,7 +72,7 @@ const SignUp = () => {
               controlId="formPlaintextphone"
             >
               <Form.Label column sm="2">
-                PHone
+                Phone
               </Form.Label>
               <Col sm="10">
                 <Form.Control
@@ -93,6 +95,7 @@ const SignUp = () => {
                   type="email"
                   name="email"
                   placeholder="Your email"
+                  required
                 />
               </Col>
             </Form.Group>
@@ -110,6 +113,7 @@ const SignUp = () => {
                   type="password"
                   name="password"
                   placeholder="Password"
+                  required
                 />
               </Col>
             </Form.Group>

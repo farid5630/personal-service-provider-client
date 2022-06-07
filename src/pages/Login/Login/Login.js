@@ -1,6 +1,9 @@
 import React, { useRef } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import auth from "../../../firebase.init";
@@ -12,47 +15,50 @@ const Login = () => {
   const emailRef = useRef("");
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-  
-const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
-  
+
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
   const navigate = useNavigate();
-  if (error) {
-  toast("User Sign in Faield...");
-}
-  if (loading || sending ) {
-    return <Loading></Loading>
+
+  if (loading || sending) {
+    return <Loading></Loading>;
   }
 
   const handleSignEmailandPass = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-
     await signInWithEmailAndPassword(email, password);
-    navigate(from, { replace: true });
   };
 
+  let errorMessege;
+  if (error) {
+    toast("Password Not match");
+    // errorMessege=error.message
+  }
+  if (user) {
+    navigate(from, { replace: true });
+  }
 
   const handleForget = async (e) => {
     const email = emailRef.current.value;
-    console.log(email);
-        if (email) {
-            await sendPasswordResetEmail(email);
-            toast('Sent email');
-        }
-        else{
-            toast('please enter your email address');
-        }
-  }
+
+    if (email) {
+      await sendPasswordResetEmail(email);
+      toast("Sent email");
+    } else {
+      toast("please enter your email address");
+    }
+  };
 
   return (
     <Container className="mb-5">
       <ToastContainer />
       <h1 className="text-primary text-center mt-4">Login form</h1>
-      
+
       <Row className="mt-3">
         <Col sm={12} md={6} className="">
           <img
@@ -77,6 +83,7 @@ const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
                   type="email"
                   name="email"
                   placeholder="your email"
+                  required
                 />
               </Col>
             </Form.Group>
@@ -94,7 +101,9 @@ const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
                   type="password"
                   name="password"
                   placeholder="Password"
+                  required
                 />
+                {/* <p className="text-danger">{errorMessege}</p> */}
               </Col>
             </Form.Group>
 
@@ -103,7 +112,9 @@ const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
               className="mb-3"
               controlId="formPlaintextPassword"
             >
-              <a href="#" onClick={handleForget}>Forget Password</a>
+              <a href="#" onClick={handleForget}>
+                Forget Password
+              </a>
               <Form.Label column sm="2"></Form.Label>
               <Col sm="10">
                 <Button variant="primary" type="submit">

@@ -6,6 +6,7 @@ import Home from './pages/Home/Home/Home';
 import Login from './pages/Login/Login/Login';
 import RequireAuth from './pages/Login/RequireAuth/RequireAuth';
 import SignUp from './pages/Login/SignUp/SignUp';
+import NotFound from './pages/NotFound/NotFound';
 import Purces from './pages/Purces/Purces';
 import Footer from './pages/Shared/Footer/Footer';
 import Header from './pages/Shared/Header/Header';
@@ -28,8 +29,10 @@ function App() {
             <Purces></Purces>
           </RequireAuth>
         }></Route>
+        <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
+      
     </>
   );
 }
